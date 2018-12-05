@@ -28,35 +28,6 @@ PARAMS = {'callback': 'JSON'}  # AT params
 # r = requests.get(url=URL, headers=HEADERS, params=PARAMS)  # G Maps
 r = requests.get(url=URL_AGY, headers=HEADERS)  # AT Agencies
 
-# Extract data from json
-data = r.json()
-sendurl = r.url
-print("URL used was : ", sendurl)
-print("Get HTTPS status code is : ", r.status_code)
-print("Type (class) of Get payload is : ", type(data))
-print("--------")
-data_str = str(data)
-len_data_str = len(data_str)
-print("Length of data is : ", len_data_str)
-if len_data_str > 1000:
-  print("Only showing first 1000 characters of Get payload ---->")
-  print(data_str[0:1000])
-else:
-  print("Showing entire Get payload ---->")
-  print(data_str)
-print("<--------")
-print("Internal API status is : ", data["status"])
-print("--------")
-print("Type (class) of API response is : ", type(data["response"]))
-print("--------")
-sav_agy0 = data["response"][0]
-print("First item of API response is : ", sav_agy0)
-print("First Agency Name within API response is : ", data["response"][0]["agency_name"])
-print("--------")
-print("Internal API error status is : ", data["error"])
-print("-------- end --------")
-
-
 # Send get request and save the response
 r = requests.get(url=URL_CAL, headers=HEADERS)  # AT Agencies
 
@@ -81,9 +52,10 @@ print("Internal API status is : ", data["status"])
 print("--------")
 print("Type (class) of API response is : ", type(data["response"]))
 print("--------")
-sav_agy0 = data["response"][0]
-print("First item of API response is : ", sav_agy0)
-print("First Agency Name within API response is : ", data["response"][0]["agency_name"])
+sav_cal4 = data["response"][4]
+print("Fifth item of API response is : ", sav_cal4)
+print("--------")
+print("Fifth Service Id within API response is : ", data["response"][4]["service_id"])
 print("--------")
 print("Internal API error status is : ", data["error"])
 print("-------- end --------")
