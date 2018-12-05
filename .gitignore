@@ -1,0 +1,14 @@
+packrat/lib*/
+packrat/src
+.RData
+.Renviron
+.Penviron
+.Rhistory
+.Rproj.user
+app/.Renviron
+data
+app/rsconnect
+.api-key
+*.pyc
+*__pycache__
+venv
